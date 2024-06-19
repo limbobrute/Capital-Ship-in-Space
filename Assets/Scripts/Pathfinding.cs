@@ -115,7 +115,7 @@ public class Pathfinding
                 start.forwardNeigbour.GetComponent<NeigbourCubes>().G = 1 + thisCubeG;
                 start.forwardNeigbour.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.forwardNeigbour);
                 Fd = start.forwardNeigbour.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Front cube F value is " + Fd);
+                //Debug.Log("Front cube F value is " + Fd);
             }
             else//Either the object doesn't exist, or there is something there already. Either way, we can't have it considered as an option
             { Fd = 100000; Debug.Log("Front cube has something already in it, value is infinite."); }
@@ -127,7 +127,7 @@ public class Pathfinding
                 start.backwardNeigbour.GetComponent<NeigbourCubes>().G = 1 + thisCubeG;
                 start.backwardNeigbour.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.backwardNeigbour);
                 Bd = start.backwardNeigbour.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Backside cube F value is " + Bd);
+                //Debug.Log("Backside cube F value is " + Bd);
             }
             else
             { Bd = 100000; Debug.Log("Backside cube has something already in it, value is infinite."); }
@@ -139,7 +139,7 @@ public class Pathfinding
                 start.leftNeigbour.GetComponent<NeigbourCubes>().G = 1 + thisCubeG;
                 start.leftNeigbour.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.leftNeigbour);
                 Ld = start.leftNeigbour.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Leftside cube F value is " + Ld);
+                //Debug.Log("Leftside cube F value is " + Ld);
             }
             else
             { Ld = 100000; Debug.Log("Leftside cube has something already in it, value is infinite."); }
@@ -151,7 +151,7 @@ public class Pathfinding
                 start.rightNeigbour.GetComponent<NeigbourCubes>().G = 1 + thisCubeG;
                 start.rightNeigbour.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.rightNeigbour);
                 Rd = start.rightNeigbour.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Rightside cube F value is " + Rd);
+                //Debug.Log("Rightside cube F value is " + Rd);
             }
             else
             { Rd = 100000; Debug.Log("Right cube has something already in it, value is infinite."); }
@@ -163,7 +163,7 @@ public class Pathfinding
                 start.upNeigbour.GetComponent<NeigbourCubes>().G = 1 + thisCubeG;
                 start.upNeigbour.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.upNeigbour);
                 Ud = start.upNeigbour.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Topside cube F value is " + Ud);
+                //Debug.Log("Topside cube F value is " + Ud);
             }
             else
             { Ud = 100000; Debug.Log("Topside cube has something already in it, value is infinite."); }
@@ -175,7 +175,7 @@ public class Pathfinding
                 start.downNeigbour.GetComponent<NeigbourCubes>().G = 1 + thisCubeG;
                 start.downNeigbour.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.downNeigbour);
                 Dd = start.downNeigbour.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Bottomside cube F value is " + Dd);
+                //Debug.Log("Bottomside cube F value is " + Dd);
             }
             else
             { Dd = 100000; Debug.Log("Bottomside cube has something already in it, value is infinite."); }
@@ -188,7 +188,7 @@ public class Pathfinding
                 start.FU.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.FU.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.FU);
                 FUd = start.FU.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Front/top cube F value is " + FUd);
+                //Debug.Log("Front/top cube F value is " + FUd);
             }
             else//Either the object doesn't exist, or there is something there already. Either way, we can't have it considered as an option
             { FUd = 100000; Debug.Log("Front/top cube has something already in it, value is infinite."); }
@@ -200,7 +200,7 @@ public class Pathfinding
                 start.FD.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.FD.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.FD);
                 FDd = start.FD.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Front/down cube F value is " + FDd);
+                //Debug.Log("Front/down cube F value is " + FDd);
             }
             else
             { FDd = 100000; Debug.Log("Front/down cube has something already in it, value is infinite."); }
@@ -212,7 +212,7 @@ public class Pathfinding
                 start.FL.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.FL.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.FL);
                 FLd = start.FL.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Front/left cube F value is " + FLd);
+                //Debug.Log("Front/left cube F value is " + FLd);
             }
             else
             { FLd = 100000; Debug.Log("Front/left cube has something already in it, value is infinite."); }
@@ -224,7 +224,7 @@ public class Pathfinding
                 start.FR.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.FR.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.FR);
                 FRd = start.FR.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Front/right cube F value is " + FRd);
+                //Debug.Log("Front/right cube F value is " + FRd);
             }
             else
             { FRd = 100000; Debug.Log("Front/right cube has something already in it, value is infinite."); }
@@ -236,7 +236,7 @@ public class Pathfinding
                 start.BU.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.BU.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.BU);
                 BUd = start.BU.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Backside/top cube F value is " + BUd);
+                //Debug.Log("Backside/top cube F value is " + BUd);
             }
             else
             { BUd = 100000; Debug.Log("Backside/top cube has something already in it, value is infinite."); }
@@ -248,7 +248,7 @@ public class Pathfinding
                 start.BD.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.BD.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.BD);
                 BDd = start.BD.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Backside/bottom cube F value is " + BDd);
+                //Debug.Log("Backside/bottom cube F value is " + BDd);
             }
             else
             { BDd = 100000; Debug.Log("Backside/bottom cube has something already in it, value is infinite."); }
@@ -260,7 +260,7 @@ public class Pathfinding
                 start.BL.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.BL.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.BL);
                 BLd = start.BL.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Backside/left cube F value is " + BLd);
+                //Debug.Log("Backside/left cube F value is " + BLd);
             }
             else
             { BLd = 100000; Debug.Log("Backside/left cube has something already in it, value is infinite."); }
@@ -272,7 +272,7 @@ public class Pathfinding
                 start.BR.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.BR.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.BR);
                 BRd = start.BR.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Backside/right cube F value is " + BRd);
+                //Debug.Log("Backside/right cube F value is " + BRd);
             }
             else
             { BRd = 100000; Debug.Log("Backside/right cube has something already in it, value is infinite."); }
@@ -284,7 +284,7 @@ public class Pathfinding
                 start.UL.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.UL.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.UL);
                 ULd = start.UL.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Top/left cube F value is " + ULd);
+                //Debug.Log("Top/left cube F value is " + ULd);
             }
             else
             { ULd = 100000; Debug.Log("Top/left cube has something already in it, value is infinite."); }
@@ -296,7 +296,7 @@ public class Pathfinding
                 start.UR.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.UR.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.UR);
                 URd = start.UR.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Top/right cube F value is " + URd);
+                //Debug.Log("Top/right cube F value is " + URd);
             }
             else
             { URd = 100000; Debug.Log("Top/right cube has something already in it, value is infinite."); }
@@ -308,7 +308,7 @@ public class Pathfinding
                 start.DL.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.DL.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.DL);
                 DLd = start.DL.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Bottom/left cube F value is " + DLd);
+                //Debug.Log("Bottom/left cube F value is " + DLd);
             }
             else
             { DLd = 100000; Debug.Log("Bottom/left cube has something already in it, value is infinite."); }
@@ -320,7 +320,7 @@ public class Pathfinding
                 start.DR.GetComponent<NeigbourCubes>().G = 2 + thisCubeG;
                 start.DR.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.DR);
                 DRd = start.DR.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Bottom/right cube F value is " + DRd);
+                //Debug.Log("Bottom/right cube F value is " + DRd);
             }
             else
             { DRd = 100000; Debug.Log("Bottom/right cube has something already in it, value is infinite."); }
@@ -333,7 +333,7 @@ public class Pathfinding
                 start.FDR.GetComponent<NeigbourCubes>().G = 3 + thisCubeG;
                 start.FDR.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.FDR);
                 FDRd = start.FDR.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Front/bottom/right cube F value is " + FDRd);
+                //Debug.Log("Front/bottom/right cube F value is " + FDRd);
             }
             else
             { FDRd = 100000; Debug.Log("Front/bottom/right cube has something already in it, value is infinite."); }
@@ -345,7 +345,7 @@ public class Pathfinding
                 start.FDL.GetComponent<NeigbourCubes>().G = 3 + thisCubeG;
                 start.FDL.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.FDL);
                 FDLd = start.FDL.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Front/bottom/left cube F value is " + FDLd);
+                //Debug.Log("Front/bottom/left cube F value is " + FDLd);
             }
             else
             { FDLd = 100000; Debug.Log("Front/bottom/left cube has something already in it, value is infinite."); }
@@ -357,7 +357,7 @@ public class Pathfinding
                 start.FUL.GetComponent<NeigbourCubes>().G = 3 + thisCubeG;
                 start.FUL.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.FUL);
                 FULd = start.FUL.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Front/top/left cube F value is " + FULd);
+                //Debug.Log("Front/top/left cube F value is " + FULd);
             }
             else
             { FULd = 100000; Debug.Log("Front/left/left cube has something already in it, value is infinite."); }
@@ -369,7 +369,7 @@ public class Pathfinding
                 start.FUR.GetComponent<NeigbourCubes>().G = 3 + thisCubeG;
                 start.FUR.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.FUR);
                 FURd = start.FUR.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Front/top/right cube F value is " + FURd);
+                //Debug.Log("Front/top/right cube F value is " + FURd);
             }
             else
             { FURd = 100000; Debug.Log("Front/top/right cube has something already in it, value is infinite."); }
@@ -381,7 +381,7 @@ public class Pathfinding
                 start.BDR.GetComponent<NeigbourCubes>().G = 3 + thisCubeG;
                 start.BDR.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.BDR);
                 BDRd = start.BDR.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Backwards/bottom/right cube F value is " + BDRd);
+                //Debug.Log("Backwards/bottom/right cube F value is " + BDRd);
             }
             else
             { BDRd = 100000; Debug.Log("Backwards/bottom/right cube has something already in it, value is infinite."); }
@@ -393,7 +393,7 @@ public class Pathfinding
                 start.BDL.GetComponent<NeigbourCubes>().G = 3 + thisCubeG;
                 start.BDL.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.BDL);
                 BDLd = start.BDL.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Backwards/bottom/left cube F value is " + BDLd);
+                //Debug.Log("Backwards/bottom/left cube F value is " + BDLd);
             }
             else
             { BDLd = 100000; Debug.Log("Backwards/bottom/left cube has something already in it, value is infinite."); }
@@ -405,7 +405,7 @@ public class Pathfinding
                 start.BUL.GetComponent<NeigbourCubes>().G = 3 + thisCubeG;
                 start.BUL.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.BUL);
                 BULd = start.BUL.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Backwards/top/left cube F value is " + BULd);
+                //Debug.Log("Backwards/top/left cube F value is " + BULd);
             }
             else
             { BULd = 100000; Debug.Log("Backwards/top/left cube has something already in it, value is infinite."); }
@@ -417,7 +417,7 @@ public class Pathfinding
                 start.BUR.GetComponent<NeigbourCubes>().G = 3 + thisCubeG;
                 start.BUR.GetComponent<NeigbourCubes>().H = GetManhattenDistance(end, start.BUR);
                 BURd = start.BUR.GetComponent<NeigbourCubes>().F;
-                Debug.Log("Backwards/top/right cube F value is " + BURd);
+                //Debug.Log("Backwards/top/right cube F value is " + BURd);
             }
             else
             { BURd = 100000; Debug.Log("Backwards/top/right cube has something already in it, value is infinite."); }
@@ -429,7 +429,7 @@ public class Pathfinding
                && Fd < FUd && Fd < FDd && Fd < FLd && Fd < FRd && Fd < BUd && Fd < BDd && Fd < BLd && Fd < BRd && Fd < ULd && Fd < URd && Fd < DLd && Fd < DRd
                && Fd < FDRd && Fd < FDLd && Fd < FULd && Fd < FURd && Fd < BDRd && Fd < BDLd && Fd < BULd && Fd < BURd)
             {
-                Debug.Log("Add forward cube, which is at " + start.forwardNeigbour.name);
+                //Debug.Log("Add forward cube, which is at " + start.forwardNeigbour.name);
                 Path.Add(start.forwardNeigbour);
                 Option.Remove(start.forwardNeigbour);
                 Distance(start.forwardNeigbour.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.forwardNeigbour.GetComponent<NeigbourCubes>().G);
@@ -438,7 +438,7 @@ public class Pathfinding
                      && Bd < FUd && Bd < FDd && Bd < FLd && Bd < FRd && Bd < BUd && Bd < BDd && Bd < BLd && Bd < BRd && Bd < ULd && Bd < URd && Bd < DLd && Bd < DRd
                      && Bd < FDRd && Bd < FDLd && Bd < FULd && Bd < FURd && Bd < BDRd && Bd < BDLd && Bd < BULd && Bd < BURd)
             {
-                Debug.Log("Add backside cube, which is at " + start.backwardNeigbour.name);
+                //Debug.Log("Add backside cube, which is at " + start.backwardNeigbour.name);
                 Path.Add(start.backwardNeigbour);
                 Option.Remove(start.backwardNeigbour);
                 Distance(start.backwardNeigbour.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.backwardNeigbour.GetComponent<NeigbourCubes>().G);
@@ -447,7 +447,7 @@ public class Pathfinding
                      && Ld < FUd && Ld < FDd && Ld < FLd && Ld < FRd && Ld < BUd && Ld < BDd && Ld < BLd && Ld < BRd && Ld < ULd && Ld < URd && Ld < DLd && Ld < DRd
                      && Ld < FDRd && Ld < FDLd && Ld < FULd && Ld < FURd && Ld < BDRd && Ld < BDLd && Ld < BULd && Ld < BURd)
             {
-                Debug.Log("Add leftside cube, which is at " + start.leftNeigbour.name);
+                //Debug.Log("Add leftside cube, which is at " + start.leftNeigbour.name);
                 Path.Add(start.leftNeigbour);
                 Option.Remove(start.leftNeigbour);
                 Distance(start.leftNeigbour.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.leftNeigbour.GetComponent<NeigbourCubes>().G);
@@ -456,7 +456,7 @@ public class Pathfinding
                      && Rd < FUd && Rd < FDd && Rd < FLd && Rd < FRd && Rd < BUd && Rd < BDd && Rd < BLd && Rd < BRd && Rd < ULd && Rd < URd && Rd < DLd && Rd < DRd
                      && Rd < FDRd && Rd < FDLd && Rd < FULd && Rd < FURd && Rd < BDRd && Rd < BDLd && Rd < BULd && Rd < BURd)
             {
-                Debug.Log("Add rightside cube, which is at " + start.rightNeigbour.name);
+                //Debug.Log("Add rightside cube, which is at " + start.rightNeigbour.name);
                 Path.Add(start.rightNeigbour);
                 Option.Remove(start.rightNeigbour);
                 Distance(start.rightNeigbour.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.rightNeigbour.GetComponent<NeigbourCubes>().G);
@@ -465,7 +465,7 @@ public class Pathfinding
                      && Ud < FUd && Ud < FDd && Ud < FLd && Ud < FRd && Ud < BUd && Ud < BDd && Ud < BLd && Ud < BRd && Ud < ULd && Ud < URd && Ud < DLd && Ud < DRd
                      && Ud < FDRd && Ud < FDLd && Ud < FULd && Ud < FURd && Ud < BDRd && Ud < BDLd && Ud < BULd && Ud < BURd)
             {
-                Debug.Log("Add topside cube, which is at " + start.upNeigbour.name);
+                //Debug.Log("Add topside cube, which is at " + start.upNeigbour.name);
                 Path.Add(start.upNeigbour);
                 Option.Remove(start.upNeigbour);
                 Distance(start.upNeigbour.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.upNeigbour.GetComponent<NeigbourCubes>().G);
@@ -474,7 +474,7 @@ public class Pathfinding
                      && Dd < FUd && Dd < FDd && Dd < FLd && Dd < FRd && Dd < BUd && Dd < BDd && Dd < BLd && Dd < BRd && Dd < ULd && Dd < URd && Dd < DLd && Dd < DRd
                      && Dd < FDRd && Dd < FDLd && Dd < FULd && Dd < FURd && Dd < BDRd && Dd < BDLd && Dd < BULd && Dd < BURd)
             {
-                Debug.Log("Add bottomside cube, which is at " + start.downNeigbour.name);
+                //Debug.Log("Add bottomside cube, which is at " + start.downNeigbour.name);
                 Path.Add(start.downNeigbour);
                 Option.Remove(start.downNeigbour);
                 Distance(start.downNeigbour.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.downNeigbour.GetComponent<NeigbourCubes>().G);
@@ -483,7 +483,7 @@ public class Pathfinding
                      && FUd < Bd && FUd < FDd && FUd < FLd && FUd < FRd && FUd < BUd && FUd < BDd && FUd < BLd && FUd < BRd && FUd < ULd && FUd < URd && FUd < DLd && FUd < DRd
                      && FUd < FDRd && FUd < FDLd && FUd < FULd && FUd < FURd && FUd < BDRd && FUd < BDLd && FUd < BULd && FUd < BURd)
             {
-                Debug.Log("Add Front/top cube, which is at " + start.FU.name);
+                //Debug.Log("Add Front/top cube, which is at " + start.FU.name);
                 Path.Add(start.FU);
                 Option.Remove(start.FU);
                 Distance(start.FU.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FU.GetComponent<NeigbourCubes>().G);
@@ -492,7 +492,7 @@ public class Pathfinding
                      && FDd < FUd && FDd < Bd && FDd < FLd && FDd < FRd && FDd < BUd && FDd < BDd && FDd < BLd && FDd < BRd && FDd < ULd && FDd < URd && FDd < DLd && FDd < DRd
                      && FDd < FDRd && FDd < FDLd && FDd < FULd && FDd < FURd && FDd < BDRd && FDd < BDLd && FDd < BULd && FDd < BURd)
             {
-                Debug.Log("Add Front/bottom cube, which is at " + start.FD.name);
+                //Debug.Log("Add Front/bottom cube, which is at " + start.FD.name);
                 Path.Add(start.FD);
                 Option.Remove(start.FD);
                 Distance(start.FD.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FD.GetComponent<NeigbourCubes>().G);
@@ -501,7 +501,7 @@ public class Pathfinding
                      && FLd < FUd && FLd < FDd && FLd < Bd && FLd < FRd && FLd < BUd && FLd < BDd && FLd < BLd && FLd < BRd && FLd < ULd && FLd < URd && FLd < DLd && FLd < DRd
                      && FLd < FDRd && FLd < FDLd && FLd < FULd && FLd < FURd && FLd < BDRd && FLd < BDLd && FLd < BULd && FLd < BURd)
             {
-                Debug.Log("Add Front/left cube, which is at " + start.FL.name);
+                //Debug.Log("Add Front/left cube, which is at " + start.FL.name);
                 Path.Add(start.FL);
                 Option.Remove(start.FL);
                 Distance(start.FL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FL.GetComponent<NeigbourCubes>().G);
@@ -510,7 +510,7 @@ public class Pathfinding
                      && FRd < FUd && FRd < FDd && FRd < FLd && FRd < Bd && FRd < BUd && FRd < BDd && FRd < BLd && FRd < BRd && FRd < ULd && FRd < URd && FRd < DLd && FRd < DRd
                      && FRd < FDRd && FRd < FDLd && FRd < FULd && FRd < FURd && FRd < BDRd && FRd < BDLd && FRd < BULd && FRd < BURd)
             {
-                Debug.Log("Add Front/right cube, which is at " + start.FR.name);
+                //Debug.Log("Add Front/right cube, which is at " + start.FR.name);
                 Path.Add(start.FR);
                 Option.Remove(start.FR);
                 Distance(start.FR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FR.GetComponent<NeigbourCubes>().G);
@@ -519,7 +519,7 @@ public class Pathfinding
                      && BUd < FUd && BUd < FDd && BUd < FLd && BUd < FRd && BUd < Bd && BUd < BDd && BUd < BLd && BUd < BRd && BUd < ULd && BUd < URd && BUd < DLd && BUd < DRd
                      && BUd < FDRd && BUd < FDLd && BUd < FULd && BUd < FURd && BUd < BDRd && BUd < BDLd && BUd < BULd && BUd < BURd)
             {
-                Debug.Log("Add back/top cube, which is at " + start.BU.name);
+                //Debug.Log("Add back/top cube, which is at " + start.BU.name);
                 Path.Add(start.BU);
                 Option.Remove(start.BU);
                 Distance(start.BU.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BU.GetComponent<NeigbourCubes>().G);
@@ -528,7 +528,7 @@ public class Pathfinding
                      && BDd < FUd && BDd < FDd && BDd < FLd && BDd < FRd && BDd < BUd && BDd < Bd && BDd < BLd && BDd < BRd && BDd < ULd && BDd < URd && BDd < DLd && BDd < DRd
                      && BDd < FDRd && BDd < FDLd && BDd < FULd && BDd < FURd && BDd < BDRd && BDd < BDLd && BDd < BULd && BDd < BURd)
             {
-                Debug.Log("Add back/bottom cube, which is at " + start.BD.name);
+                //Debug.Log("Add back/bottom cube, which is at " + start.BD.name);
                 Path.Add(start.BD);
                 Option.Remove(start.BD);
                 Distance(start.BD.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BD.GetComponent<NeigbourCubes>().G);
@@ -537,7 +537,7 @@ public class Pathfinding
                      && BLd < FUd && BLd < FDd && BLd < FLd && BLd < FRd && BLd < BUd && BLd < BDd && BLd < Bd && BLd < BRd && BLd < ULd && BLd < URd && BLd < DLd && BLd < DRd
                      && BLd < FDRd && BLd < FDLd && BLd < FULd && BLd < FURd && BLd < BDRd && BLd < BDLd && BLd < BULd && BLd < BURd)
             {
-                Debug.Log("Add Back/left cube, which is at " + start.BL.name);
+                //Debug.Log("Add Back/left cube, which is at " + start.BL.name);
                 Path.Add(start.BL);
                 Option.Remove(start.BL);
                 Distance(start.BL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BL.GetComponent<NeigbourCubes>().G);
@@ -546,7 +546,7 @@ public class Pathfinding
                      && BRd < FUd && BRd < FDd && BRd < FLd && BRd < FRd && BRd < BUd && BRd < BDd && BRd < BLd && BRd < Bd && BRd < ULd && BRd < URd && BRd < DLd && BRd < DRd
                      && BRd < FDRd && BRd < FDLd && BRd < FULd && BRd < FURd && BRd < BDRd && BRd < BDLd && BRd < BULd && BRd < BURd)
             {
-                Debug.Log("Add back/right cube, which is at " + start.BR.name);
+                //Debug.Log("Add back/right cube, which is at " + start.BR.name);
                 Path.Add(start.BR);
                 Option.Remove(start.BR);
                 Distance(start.BR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BR.GetComponent<NeigbourCubes>().G);
@@ -555,7 +555,7 @@ public class Pathfinding
                      && ULd < FUd && ULd < FDd && ULd < FLd && ULd < FRd && ULd < BUd && ULd < BDd && ULd < BLd && ULd < BRd && ULd < Bd && ULd < URd && ULd < DLd && ULd < DRd
                      && ULd < FDRd && ULd < FDLd && ULd < FULd && ULd < FURd && ULd < BDRd && ULd < BDLd && ULd < BULd && ULd < BURd)
             {
-                Debug.Log("Add Top/left cube, which is at " + start.UL.name);
+                //Debug.Log("Add Top/left cube, which is at " + start.UL.name);
                 Path.Add(start.UL);
                 Option.Remove(start.UL);
                 Distance(start.UL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.UL.GetComponent<NeigbourCubes>().G);
@@ -564,7 +564,7 @@ public class Pathfinding
                      && URd < FUd && URd < FDd && URd < FLd && URd < FRd && URd < BUd && URd < BDd && URd < BLd && URd < BRd && URd < ULd && URd < Bd && URd < DLd && URd < DRd
                      && URd < FDRd && URd < FDLd && URd < FULd && URd < FURd && URd < BDRd && URd < BDLd && URd < BULd && URd < BURd)
             {
-                Debug.Log("Add Top/right, which is at " + start.UR.name);
+                //Debug.Log("Add Top/right, which is at " + start.UR.name);
                 Path.Add(start.UR);
                 Option.Remove(start.UR);
                 Distance(start.UR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.UR.GetComponent<NeigbourCubes>().G);
@@ -573,7 +573,7 @@ public class Pathfinding
                      && DLd < FUd && DLd < FDd && DLd < FLd && DLd < FRd && DLd < BUd && DLd < BDd && DLd < BLd && DLd < BRd && DLd < ULd && DLd < URd && DLd < Bd && Bd < DLd
                      && DLd < FDRd && DLd < FDLd && DLd < FULd && DLd < FURd && DLd < BDRd && DLd < BDLd && DLd < BULd && DLd < BURd)
             {
-                Debug.Log("Add Bottom/left cube, which is at " + start.DL.name);
+                //Debug.Log("Add Bottom/left cube, which is at " + start.DL.name);
                 Path.Add(start.DL);
                 Option.Remove(start.DL);
                 Distance(start.DL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.DL.GetComponent<NeigbourCubes>().G);
@@ -582,7 +582,7 @@ public class Pathfinding
                      && DRd < FUd && DRd < FDd && DRd < FLd && DRd < FRd && DRd < BUd && DRd < BDd && DRd < BLd && DRd < BRd && DRd < ULd && DRd < URd && DRd < DLd && DRd < Bd
                      && DRd < FDRd && DRd < FDLd && DRd < FULd && DRd < FURd && DRd < BDRd && DRd < BDLd && DRd < BULd && DRd < BURd)
             {
-                Debug.Log("Add Bottom/right cube, which is at " + start.DR.name);
+                //Debug.Log("Add Bottom/right cube, which is at " + start.DR.name);
                 Path.Add(start.DR);
                 Option.Remove(start.DR);
                 Distance(start.DR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.DR.GetComponent<NeigbourCubes>().G);
@@ -591,7 +591,7 @@ public class Pathfinding
                      && FDRd < FUd && FDRd < FDd && FDRd < FLd && FDRd < FRd && FDRd < BUd && FDRd < BDd && FDRd < BLd && FDRd < BRd && FDRd < ULd && FDRd < URd && FDRd < DLd && FDRd < DRd
                      && FDRd < Bd && FDRd < FDLd && FDRd < FULd && FDRd < FURd && FDRd < BDRd && FDRd < BDLd && FDRd < BULd && FDRd < BURd)
             {
-                Debug.Log("Add Front/bottom/right cube, which is at " + start.FDR.name);
+                //Debug.Log("Add Front/bottom/right cube, which is at " + start.FDR.name);
                 Path.Add(start.FDR);
                 Option.Remove(start.FDR);
                 Distance(start.FDR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FDR.GetComponent<NeigbourCubes>().G);
@@ -600,7 +600,7 @@ public class Pathfinding
                      && FDLd < FUd && FDLd < FDd && FDLd < FLd && FDLd < FRd && FDLd < BUd && FDLd < BDd && FDLd < BLd && FDLd < BRd && FDLd < ULd && FDLd < URd && FDLd < DLd && FDLd < DRd
                      && FDLd < FDRd && FDLd < Bd && FDLd < FULd && FDLd < FURd && FDLd < BDRd && FDLd < BDLd && FDLd < BULd && FDLd < BURd)
             {
-                Debug.Log("Add Front/bottom/left cube, which is at " + start.FDL.name);
+                //Debug.Log("Add Front/bottom/left cube, which is at " + start.FDL.name);
                 Path.Add(start.FDL);
                 Option.Remove(start.FDL);
                 Distance(start.FDL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FDL.GetComponent<NeigbourCubes>().G);
@@ -609,7 +609,7 @@ public class Pathfinding
                      && FULd < FUd && FULd < FDd && FULd < FLd && FULd < FRd && FULd < BUd && FULd < BDd && FULd < BLd && FULd < BRd && FULd < ULd && FULd < URd && FULd < DLd && FULd < DRd
                      && Bd < FDRd && Bd < FDLd && FULd < Bd && FULd  < FURd && FULd < BDRd && FULd < BDLd && FULd < BULd && FULd < BURd)
             {
-                Debug.Log("Add Front/top/left cube, which is at " + start.FUL.name);
+                //Debug.Log("Add Front/top/left cube, which is at " + start.FUL.name);
                 Path.Add(start.FUL);
                 Option.Remove(start.FUL);
                 Distance(start.FUL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FUL.GetComponent<NeigbourCubes>().G);
@@ -618,7 +618,7 @@ public class Pathfinding
                      && FURd < FUd && FURd < FDd && FURd < FLd && FURd < FRd && FURd < BUd && FURd < BDd && FURd < BLd && FURd < BRd && FURd < ULd && FURd < URd && FURd < DLd && FURd < DRd
                      && FURd < FDRd && FURd < FDLd && FURd < FULd && FURd < Bd && FURd < BDRd && FURd < BDLd && FURd < BULd && FURd < BURd)
             {
-                Debug.Log("Add Front/top/right cube, which is at " + start.FUR.name);
+                //Debug.Log("Add Front/top/right cube, which is at " + start.FUR.name);
                 Path.Add(start.FUR);
                 Option.Remove(start.FUR);
                 Distance(start.FUR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FUR.GetComponent<NeigbourCubes>().G);
@@ -627,7 +627,7 @@ public class Pathfinding
                      && BDRd < FUd && BDRd < FDd && BDRd < FLd && BDRd < FRd && BDRd < BUd && BDRd < BDd && BDRd < BLd && BDRd < BRd && BDRd < ULd && BDRd < URd && BDRd < DLd && BDRd < DRd
                      && BDRd < FDRd && BDRd < FDLd && BDRd < FULd && BDRd < FURd && BDRd < Bd && BDRd < Bd && BDRd < Bd && BDRd < Bd)
             {
-                Debug.Log("Add Back/bottom/right cube, which is at " + start.BDR.name);
+                //Debug.Log("Add Back/bottom/right cube, which is at " + start.BDR.name);
                 Path.Add(start.BDR);
                 Option.Remove(start.BDR);
                 Distance(start.BDR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BDR.GetComponent<NeigbourCubes>().G);
@@ -636,7 +636,7 @@ public class Pathfinding
                      && BDLd < FUd && BDLd < FDd && BDLd < FLd && BDLd < FRd && BDLd < BUd && BDLd < BDd && BDLd < BLd && BDLd < BRd && BDLd < ULd && BDLd < URd && BDLd < DLd && BDLd < DRd
                      && BDLd < FDRd && BDLd < FDLd && BDLd < FULd && BDLd < FURd && BDLd < BDRd && BDLd < Bd && BDLd < Bd && BDLd < Bd)
             {
-                Debug.Log("Add Back/bottom/left cube, which is at " + start.BDL.name);
+                //Debug.Log("Add Back/bottom/left cube, which is at " + start.BDL.name);
                 Path.Add(start.BDL);
                 Option.Remove(start.BDL);
                 Distance(start.BDL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BDL.GetComponent<NeigbourCubes>().G);
@@ -645,7 +645,7 @@ public class Pathfinding
                      && BULd < FUd && BULd < FDd && BULd < FLd && BULd < FRd && BULd < BUd && BULd < BDd && BULd < BLd && BULd < BRd && BULd < ULd && BULd < URd && BULd < DLd && BULd < DRd
                      && BULd < FDRd && BULd < FDLd && BULd < FULd && BULd < FURd && BULd < BDRd && BULd < BDLd && BULd < Bd && BULd < BURd)
             {
-                Debug.Log("Add Back/top/left cube, which is at " + start.BUL.name);
+                //Debug.Log("Add Back/top/left cube, which is at " + start.BUL.name);
                 Path.Add(start.BUL);
                 Option.Remove(start.BUL);
                 Distance(start.BUL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BUL.GetComponent<NeigbourCubes>().G);
@@ -654,7 +654,7 @@ public class Pathfinding
                     && BURd < FUd && BURd < FDd && BURd < FLd && BURd < FRd && BURd < BUd && BURd < BDd && BURd < BLd && BURd < BRd && BURd < ULd && BURd < URd && BURd < DLd && BURd < DRd
                     && BURd < FDRd && BURd < FDLd && BURd < FULd && BURd < FURd && BURd < BDRd && BURd < BDLd && BURd < BULd && BURd < Bd)
             {
-                Debug.Log("Add Back/top/right cube, which is at " + start.BUR.name);
+                //Debug.Log("Add Back/top/right cube, which is at " + start.BUR.name);
                 Path.Add(start.BUR);
                 Option.Remove(start.BUR);
                 Distance(start.BUR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BUR.GetComponent<NeigbourCubes>().G);
@@ -664,14 +664,14 @@ public class Pathfinding
                 int r = Random.Range(0, 1);
                 if(r == 0)
                 {
-                    Debug.Log("Add Front/top/left cube, which is at " + start.FUL.name);
+                    //Debug.Log("Add Front/top/left cube, which is at " + start.FUL.name);
                     Path.Add(start.FUL);
                     Option.Remove(start.FUL);
                     Distance(start.FUL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FUL.GetComponent<NeigbourCubes>().G);
                 }
                 else
                 {
-                    Debug.Log("Add Front/top/right cube, which is at " + start.FUR.name);
+                    //Debug.Log("Add Front/top/right cube, which is at " + start.FUR.name);
                     Path.Add(start.FUR);
                     Option.Remove(start.FUR);
                     Distance(start.FUR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FUR.GetComponent<NeigbourCubes>().G);
@@ -682,14 +682,14 @@ public class Pathfinding
                 int r = Random.Range(0, 1);
                 if (r == 0)
                 {
-                    Debug.Log("Add Back/top/left cube, which is at " + start.BUL.name);
+                    //Debug.Log("Add Back/top/left cube, which is at " + start.BUL.name);
                     Path.Add(start.BUL);
                     Option.Remove(start.BUL);
                     Distance(start.BUL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BUL.GetComponent<NeigbourCubes>().G);
                 }
                 else
                 {
-                    Debug.Log("Add Back/top/right cube, which is at " + start.BUR.name);
+                    //Debug.Log("Add Back/top/right cube, which is at " + start.BUR.name);
                     Path.Add(start.BUR);
                     Option.Remove(start.BUR);
                     Distance(start.BUR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BUR.GetComponent<NeigbourCubes>().G);
@@ -700,14 +700,14 @@ public class Pathfinding
                 int r = Random.Range(0, 1);
                 if(r == 0)
                 {
-                    Debug.Log("Add Front/left cube, which is at " + start.FL.name);
+                    //Debug.Log("Add Front/left cube, which is at " + start.FL.name);
                     Path.Add(start.FL);
                     Option.Remove(start.FL);
                     Distance(start.FL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FL.GetComponent<NeigbourCubes>().G);
                 }
                 else
                 {
-                    Debug.Log("Add Front/right cube, which is at " + start.FR.name);
+                    //Debug.Log("Add Front/right cube, which is at " + start.FR.name);
                     Path.Add(start.FR);
                     Option.Remove(start.FR);
                     Distance(start.FR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FR.GetComponent<NeigbourCubes>().G);
@@ -718,14 +718,14 @@ public class Pathfinding
                 int r = Random.Range(0, 1);
                 if (r == 0)
                 {
-                    Debug.Log("Add Front/bottom/left cube, which is at " + start.FDL.name);
+                    //Debug.Log("Add Front/bottom/left cube, which is at " + start.FDL.name);
                     Path.Add(start.FDL);
                     Option.Remove(start.FDL);
                     Distance(start.FDL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FDL.GetComponent<NeigbourCubes>().G);
                 }
                 else
                 {
-                    Debug.Log("Add Front/bottom/right cube, which is at " + start.FDR.name);
+                    //Debug.Log("Add Front/bottom/right cube, which is at " + start.FDR.name);
                     Path.Add(start.FDR);
                     Option.Remove(start.FDR);
                     Distance(start.FDR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.FDR.GetComponent<NeigbourCubes>().G);
@@ -736,14 +736,14 @@ public class Pathfinding
                 int r = Random.Range(0, 1);
                 if (r == 0)
                 {
-                    Debug.Log("Add Back/bottom/left cube, which is at " + start.BDL.name);
+                    //Debug.Log("Add Back/bottom/left cube, which is at " + start.BDL.name);
                     Path.Add(start.BDL);
                     Option.Remove(start.BDL);
                     Distance(start.BDL.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BDL.GetComponent<NeigbourCubes>().G);
                 }
                 else
                 {
-                    Debug.Log("Add Back/bottom/right cube, which is at " + start.BDR.name);
+                    //Debug.Log("Add Back/bottom/right cube, which is at " + start.BDR.name);
                     Path.Add(start.BDR);
                     Option.Remove(start.BDR);
                     Distance(start.BDR.GetComponent<NeigbourCubes>().GetNeigbhours(), end, start.BDR.GetComponent<NeigbourCubes>().G);

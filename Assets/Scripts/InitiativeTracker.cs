@@ -54,10 +54,16 @@ public class InitiativeTracker : MonoBehaviour
         LoadingText.SetActive(false);
         if (!initiative[0].GetComponent<EnemyAI>())
         { PlayerGhost.SetActive(true); Camera.main.gameObject.SetActive(true); }
+        else if (initiative[0].GetComponent<SmallPatrol>())
+        {
+            initiative[0].GetComponent<SmallPatrol>().MoveSelf();
+            initiative[0].GetComponent<SmallPatrol>().View.SetActive(true);
+            Camera.main.gameObject.SetActive(false);
+        }
         else
         { 
-            initiative[0].GetComponent<EnemyAI>().MoveSelf();
-            initiative[0].GetComponent<EnemyAI>().View.SetActive(true);
+            initiative[0].GetComponent<EnemyMissileCarrier>().MoveSelf();
+            initiative[0].GetComponent<EnemyMissileCarrier>().View.SetActive(true);
             Camera.main.gameObject.SetActive(false); 
         }
     }
@@ -72,9 +78,9 @@ public class InitiativeTracker : MonoBehaviour
         if (index == initiative.Count)
         { index = 0; }
 
-        if (initiative[index].GetComponent<EnemyAI>())
+        if (initiative[index].GetComponent<SmallPatrol>())
         { 
-            var Enemy = initiative[index].GetComponent<EnemyAI>();
+            var Enemy = initiative[index].GetComponent<SmallPatrol>();
             Enemy.View.SetActive(true);
             Enemy.MoveSelf(); 
         }

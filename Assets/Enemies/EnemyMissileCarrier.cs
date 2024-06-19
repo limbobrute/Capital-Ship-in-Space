@@ -3,50 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class EnemyMissileCarrier : MonoBehaviour
+public class EnemyMissileCarrier : EnemyAI
 {
-    public GameObject Player;
-    public GameObject GridCollider;
+    /*public GameObject Player;
+    public GameObject GridCollider;*/
     public GameObject MissileLaunchSite;
     public GameObject Missile;
-    public GameObject View;
-    public int TravelDistance = 0;
+    //public GameObject View;
+    //public int TravelDistance = 0;
     public int MissileTargetingDistance = 30;
-    public float speed = 6f;
-    public float RotateStep = 6f;
-    public float TimeToTurn = 3f;
-    private GameObject EndPoint;
-    private Pathfinding path;
+    //public float speed = 6f;
+    //public float RotateStep = 6f;
+    //public float TimeToTurn = 3f;
+    //private GameObject EndPoint;
+    //private Pathfinding path;
     private List<GameObject> MissileRoute = new List<GameObject>();
     private MissilePathfinding Missilepath;
-    private ShowNearbyGrid StartPoint;
-    private List<GameObject> PossibleEndPoint = new List<GameObject>();
-    private List<GameObject> Route = new List<GameObject>();
-    private List<GameObject> PossibleTargets = new List<GameObject>();
-    private CubeGrid grid;
+    //private ShowNearbyGrid StartPoint;
+    //private List<GameObject> PossibleEndPoint = new List<GameObject>();
+    //private List<GameObject> Route = new List<GameObject>();
+    //private List<GameObject> PossibleTargets = new List<GameObject>();
+    //private CubeGrid grid;
     private InitiativeTracker tracker;
-
-    // Start is called before the first frame update
-    private void Start()
+    
+    private void Awake()
     {
-        path = new Pathfinding();
-        StartPoint = GetComponentInChildren<ShowNearbyGrid>();
+        //path = new Pathfinding();
+        //StartPoint = GetComponentInChildren<ShowNearbyGrid>();
         Missilepath = new MissilePathfinding();
-        grid = CubeGrid.instance;
+        //grid = CubeGrid.instance;
         tracker = InitiativeTracker.instance;
     }
 
-    // Update is called once per frame
-    private void Update()
+    /*private void Update()
     {
         if (Route.Count > 0)
         {
             MoveAlongRoute();
         }
-    }
+    }*/
 
-    public void MoveSelf()
+    public override void MoveSelf()
     {
+        RaycastHit hit;
         var GridPoint = StartPoint.GetComponent<ShowNearbyGrid>().GridPoint;
         if (PossibleEndPoint.Count != 0)
         { PossibleEndPoint.Clear(); }
@@ -59,6 +58,9 @@ public class EnemyMissileCarrier : MonoBehaviour
                 obj.GetComponent<NeigbourCubes>().EnemyMoveToValue += (int)distance;
                 var rangeFromPlayer = Vector3.Distance(obj.transform.position, Player.transform.position) / MissileTargetingDistance;
                 obj.GetComponent<NeigbourCubes>().EnemyMoveToValue += (int)rangeFromPlayer;
+                Physics.Raycast(obj.transform.position, (Player.transform.position - obj.transform.position), out hit, Mathf.Infinity);
+                if(hit.collider.gameObject.CompareTag("Player"))
+                { obj.GetComponent<NeigbourCubes>().EnemyMoveToValue -= 10000; }
                 //grid.ShowGrid(obj);//Debug tool to show all possible locations for this AI to go to
                 PossibleEndPoint.Add(obj);
             }
@@ -68,9 +70,10 @@ public class EnemyMissileCarrier : MonoBehaviour
         Debug.Log("Enemy is moving towards " + EndPoint.name);
 
         Route = path.FindPath(GridPoint, EndPoint);
+        StartCoroutine(MoveAlongRoute());
     }
 
-    private void MoveAlongRoute()
+    /*private void MoveAlongRoute()
     {
         var targetRotation = Quaternion.LookRotation(Route[0].transform.position - transform.position);
         var step = speed * Time.deltaTime;
@@ -84,9 +87,9 @@ public class EnemyMissileCarrier : MonoBehaviour
         {
             FindTarget();
         }
-    }
+    }*/
 
-    private void FindTarget()
+    public override void FindTarget()
     {
         //var prefab = Instantiate(Missile, MissileLaunchSite.transform.position, Quaternion.Euler(Vector3.up));
         foreach (GameObject obj in grid.Grid)

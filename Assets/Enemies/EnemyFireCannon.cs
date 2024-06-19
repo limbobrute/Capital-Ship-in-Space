@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class EnemyFireCannon : MonoBehaviour
 {
-    public float distance = 30f;
+    public SmallPatrol thisShip;
     public LayerMask mask;
     public GameObject Projectile;
     public GameObject point;
     public float speed = 100f;
     public GameObject us;
     public GameObject EnemyCam;
+    public Transform GunPoint;
     private InitiativeTracker tracker;
 
     private void Start()
     {
         tracker = InitiativeTracker.instance;
+        //thisShip = us.GetComponent<SmallPatrol>();
     }
 
     public void CheckFire()
     {
+        float distance = us.GetComponent<SmallPatrol>().ShootingDistance;
         RaycastHit hit;
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, distance, mask);
         if (hit.transform != null && hit.transform.gameObject.CompareTag("Player"))
@@ -46,8 +49,10 @@ public class EnemyFireCannon : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        float distance = thisShip.ShootingDistance;
+        /*Gizmos.color = Color.green;
         Vector3 direction = transform.TransformDirection(Vector3.up) * distance;
-        Gizmos.DrawRay(transform.position, direction);
+        Gizmos.DrawRay(transform.position, direction);*/
+        RangeCheck.DrawGizmoDisk(GunPoint, distance);
     }
 }

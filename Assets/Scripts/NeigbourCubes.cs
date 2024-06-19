@@ -177,6 +177,11 @@ public class NeigbourCubes : MonoBehaviour
         return neighbours;
     }
 
+    public void HasObstacle()
+    {
+        neighbours.ObstacleFilled = true;
+    }
+
     private void ListNeigbours()
     {
         grid.neighbours.Add(FindNeigbours());
