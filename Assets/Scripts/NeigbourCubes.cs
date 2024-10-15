@@ -143,36 +143,6 @@ public class NeigbourCubes : MonoBehaviour
             { neighbours.BUL = obj; }
             else if(Pos == new Vector3(right, up, backward))
             { neighbours.BUR = obj;}
-            /*
-            //forward
-            Vector3 foward = new Vector3(transform.position.x, transform.position.y, transform.position.z + 2);
-            //backward
-            Vector3 backward = new Vector3(transform.position.x, transform.position.y, transform.position.z - 2);
-            //left
-            Vector3 left = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
-            //right
-            Vector3 right = new Vector3(transform.position.x + 2, transform.position.y, transform.position.z);
-            //up
-            Vector3 up = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
-            //down
-            Vector3 down = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
-            
-
-            if(obj.transform.position == foward)
-            { neighbours.forwardNeigbour = obj; Forward = true; }
-            else if (obj.transform.position == backward)
-            { neighbours.backwardNeigbour = obj; Backward = true; }
-            else if (obj.transform.position == left)
-            { neighbours.leftNeigbour = obj; Left = true; }
-            else if (obj.transform.position == right)
-            { neighbours.rightNeigbour = obj; Right = true; }
-            else if (obj.transform.position == up)
-            { neighbours.upNeigbour = obj; Up = true; }
-            else if (obj.transform.position == down)
-            { neighbours.downNeigbour = obj; Down = true; }
-            else if(Forward && Backward && Left && Right && Up && Down)
-            { break; }
-            */
         }
         return neighbours;
     }
@@ -180,6 +150,7 @@ public class NeigbourCubes : MonoBehaviour
     public void HasObstacle()
     {
         neighbours.ObstacleFilled = true;
+        GetComponent<MeshRenderer>().material.SetColor("_Color", Color.red);
     }
 
     private void ListNeigbours()
@@ -212,30 +183,16 @@ public class NeigbourCubes : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        neighbours.ObstacleFilled = false;
-        neighbours.PlayerPartFilled = false;
-        neighbours.EnemyPartFilled = false;
-        neighbours.PlayerHull = false;
-        GetComponent<MeshRenderer>().material.SetColor("_Color", Color.green);
-    }
-
-    /*private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        { neighbours.PlayerHull = true; }
-
+        if (other.gameObject.CompareTag("PlayerShipPart"))
+        { neighbours.PlayerPartFilled = false; }
         else if (other.gameObject.CompareTag("Enemy"))
-        { 
-            neighbours.EnemyPartFilled = true; 
-            GetComponent<MeshRenderer>().material.SetColor("_Color", Color.red);
-            //Debug.Log(other.name);
-            //other.GetComponent<InitRemover>().cube = this.gameObject;
-        }
-
-        else if (other.gameObject.CompareTag("PlayerShipPart"))
-        { neighbours.PlayerPartFilled = true; }
-
+        { neighbours.EnemyPartFilled = false; }
+        else if (other.gameObject.CompareTag("Player"))
+        { neighbours.PlayerHull = false; }
         else
-        { neighbours.ObstacleFilled = true; GetComponent<MeshRenderer>().material.SetColor("_Color", Color.red); }
-    }*/
+        { neighbours.ObstacleFilled=false;}
+
+        if (!(neighbours.ObstacleFilled && neighbours.PlayerPartFilled && neighbours.EnemyPartFilled && neighbours.PlayerHull))
+        { GetComponent<MeshRenderer>().material.SetColor("_Color", Color.green); }
+    }
 }

@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class ComponentHealth : MonoBehaviour
 {
-    public int health;
+    [SerializeField] private int health;
     [SerializeField] private int TargetValue;
+
+    public HealthBar healthBar;
+
+    private void Start()
+    {
+        healthBar.SetMaxHealth(health);
+    }
+
+
+    public void DamageComponent(int damage)
+    {
+        health -= damage;
+        healthBar.SetHealth(health);
+    }
 
     private void OnTriggerEnter(Collider other)
     {

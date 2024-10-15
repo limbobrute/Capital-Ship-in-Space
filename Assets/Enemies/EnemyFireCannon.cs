@@ -17,7 +17,6 @@ public class EnemyFireCannon : MonoBehaviour
     private void Start()
     {
         tracker = InitiativeTracker.instance;
-        //thisShip = us.GetComponent<SmallPatrol>();
     }
 
     public void CheckFire()
@@ -37,6 +36,7 @@ public class EnemyFireCannon : MonoBehaviour
     {
         var shot = Instantiate(Projectile, point.transform.position, Quaternion.identity);
         shot.GetComponent<ProjectileScript>().TargetType = "Player";
+        shot.GetComponent<ProjectileScript>().SetDamage(thisShip.CannonDamage);
         shot.GetComponent<Rigidbody>().AddForce(point.transform.TransformDirection(Vector3.forward) * speed);
     }
 
@@ -50,9 +50,9 @@ public class EnemyFireCannon : MonoBehaviour
     private void OnDrawGizmos()
     {
         float distance = thisShip.ShootingDistance;
-        /*Gizmos.color = Color.green;
-        Vector3 direction = transform.TransformDirection(Vector3.up) * distance;
-        Gizmos.DrawRay(transform.position, direction);*/
+        Gizmos.color = Color.green;
+        Vector3 direction = transform.TransformDirection(Vector3.up * distance);
+        Gizmos.DrawRay(transform.position, direction);
         RangeCheck.DrawGizmoDisk(GunPoint, distance);
     }
 }

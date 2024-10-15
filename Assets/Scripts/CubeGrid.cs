@@ -84,6 +84,12 @@ public class CubeGrid : MonoBehaviour
             neighbours.Add(obj.GetComponent<NeigbourCubes>().FindNeigbours());
             yield return null;
         }
+        GameObject[] obstacle = GameObject.FindGameObjectsWithTag("Obstacle");
+        foreach(GameObject obj in obstacle)
+        {
+            obj.GetComponent<Obscatle>().ColliderCheck();
+        }
+
         tracker.StartGame();
         StopAllCoroutines();
     }

@@ -34,12 +34,20 @@ public class Pathfinding
 
     private void Check()
     {
-        foreach(NeigbourCubes.Neighbours node in grid.neighbours)
+        foreach(GameObject obj in grid.Grid)
         {
-            if(node.ObstacleFilled || node.EnemyPartFilled || node.PlayerHull)
-            { NoGo.Add(node.self); }
+            NeigbourCubes node = obj.GetComponent<NeigbourCubes>();
+            if(node.neighbours.ObstacleFilled || node.neighbours.EnemyPartFilled || node.neighbours.PlayerHull)
+            { NoGo.Add(node.neighbours.self); }
             else
-            { Option.Add(node.self); }
+            { Option.Add(node.neighbours.self); }
+        }
+
+        foreach(GameObject obj in Option)
+        { 
+            NeigbourCubes temp = obj.GetComponent<NeigbourCubes>();
+            if(temp.neighbours.ObstacleFilled || temp.neighbours.EnemyPartFilled || temp.neighbours.PlayerHull)
+            { Debug.Log("YOU FUCKED UP. " + temp.name + " SHOULD NOT BE AN ACCETABLE OPTION!!"); }
         }
     }
 

@@ -13,6 +13,7 @@ public class SmallPatrol : EnemyAI
     public GameObject CircleCastRotatePoint;
     public LayerMask mask;
     public int ShootingDistance = 30;
+    public int CannonDamage = 10;
 
     public override void MoveSelf()
     {
@@ -22,21 +23,22 @@ public class SmallPatrol : EnemyAI
 
         foreach (GameObject obj in grid.Grid)
         {
+            NeigbourCubes neighbours = obj.GetComponent<NeigbourCubes>();
             var distance = Vector3.Distance(transform.position, obj.transform.position);
-            if ((distance <= TravelDistance * 10 && obj != GridPoint) && !obj.GetComponent<NeigbourCubes>().neighbours.EnemyPartFilled && !obj.GetComponent<NeigbourCubes>().neighbours.PlayerHull)
+            if (neighbours.neighbours.ObstacleFilled || neighbours.neighbours.PlayerPartFilled || neighbours.neighbours.EnemyPartFilled) 
+            { continue; }
+            else if (distance <= TravelDistance * 10 && !obj.GetComponent<NeigbourCubes>().neighbours.EnemyPartFilled && !obj.GetComponent<NeigbourCubes>().neighbours.PlayerHull)
             {
                 obj.GetComponent<NeigbourCubes>().EnemyMoveToValue += (int)distance;
-                var rangeFromPlayer = Vector3.Distance(obj.transform.position, Player.transform.position) - ShootingDistance;
-                obj.GetComponent<NeigbourCubes>().EnemyMoveToValue += (int)rangeFromPlayer;
-                /*var yValue = Mathf.Abs(obj.transform.position.y - Player.transform.position.y);
-                obj.GetComponent<NeigbourCubes>().EnemyMoveToValue -= (int)yValue;*/
+                var rangeFromPlayer = Vector3.Distance(obj.transform.position, Player.transform.position);
+                obj.GetComponent<NeigbourCubes>().EnemyMoveToValue -= (int)rangeFromPlayer;
                 //grid.ShowGrid(obj);//Debug tool to show all possible locations for this AI to go to
                 PossibleEndPoint.Add(obj);
             }
         }
 
         List<GameObject> temp = PossibleEndPoint.OrderByDescending(x => x.GetComponent<NeigbourCubes>().EnemyMoveToValue).ToList();
-        temp.Reverse();
+        //temp.Reverse();
         EndPoint = temp[0];
         Debug.Log("Enemy is moving towards " + EndPoint.name);
 
@@ -44,25 +46,41 @@ public class SmallPatrol : EnemyAI
         StartCoroutine(MoveAlongRoute());
     }
 
-    /*private void MoveAlongRoute()
-    {
-        var targetRotation = Quaternion.LookRotation(Route[0].transform.position - transform.position);
-        var step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, Route[0].transform.position, step);
-        transform.position = Vector3.MoveTowards(transform.position, Route[0].transform.position, step);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, step);
-        if (Vector3.Distance(transform.position, Route[0].transform.position) < .05f)
-        { transform.position = Route[0].transform.position; Route.RemoveAt(0); }
-
-        if (Route.Count == 0)
-        {
-            //StartCoroutine(MoveTurent());
-            FindTarget();
-        }
-    }*/
-
     public override void FindTarget()
     {
+        bool found = false;
+        float zRotate = 0f;
+        CircleCastRotatePoint.transform.parent = null;
+        CircleCastRotatePoint.transform.position = transform.position;
+
+        for (int i = 0; i < 180; i++)
+        {
+            CircleCastRotatePoint.transform.localRotation = Quaternion.Euler(i, 0f, 0f);
+            for (int j = 0; j < 361; j++)
+            {
+                CircleCastPoint.transform.localRotation = Quaternion.Euler(0f, j, 0f);
+                Vector3 forward = CircleCastPoint.transform.TransformDirection(Vector3.forward * ShootingDistance);
+                Debug.DrawRay(CircleCastPoint.transform.position, forward, Color.white);
+
+                if (Physics.Raycast(CircleCastPoint.transform.position, forward, float.MaxValue, mask, QueryTriggerInteraction.Collide))
+                {
+                    Debug.Log("You've got the player!!");
+                    found = true;
+                    zRotate = j;
+                    break;
+                }
+
+
+                //yield return null;
+            }
+            if (found)
+            { break; }
+        }
+
+        if (found)
+        { StartCoroutine(RotateShip(CircleCastRotatePoint.transform, zRotate)); }
+        //StartCoroutine(Search());
+        /*
         float rays = 360f;
         float totalAngle = 360f;
         float delta = totalAngle / rays;
@@ -101,7 +119,8 @@ public class SmallPatrol : EnemyAI
         }
 
         //t.parent = transform;
-        StartCoroutine(RotateShip(t));
+        StartCoroutine(RotateShip(t));*/
+
         /*
         //Debug.Log("Now searching for the enemy");
         RaycastHit hit;
@@ -158,17 +177,20 @@ public class SmallPatrol : EnemyAI
         { StartCoroutine(RotateShip(xRotate)); }*/
     }
 
-    IEnumerator RotateShip(Transform to)
+    IEnumerator RotateShip(Transform to, float zRotate)
     {
         float x = to.rotation.x;
+        Debug.Log("X rotation is: " + x);
         if (!(Mathf.Abs(x) == 0f) || !(Mathf.Abs(x) == 180f))
         {
+            float rx = transform.rotation.x;
             float timer = 0f;
             while (timer < TimeToTurn)
             {
                 timer += (Time.deltaTime / 2f);
-                Quaternion temp = Quaternion.Slerp(transform.rotation, to.rotation, timer / TimeToTurn);
-                transform.rotation = temp;
+                transform.rotation = Quaternion.Slerp(transform.rotation, to.rotation, timer / TimeToTurn);
+                //rx = Mathf.Lerp(rx, x, timer / TimeToTurn);
+                //transform.rotation = Quaternion.Euler(rx, 0f, 0f);
                 yield return null;
             }
             transform.rotation = to.rotation;
@@ -191,16 +213,26 @@ public class SmallPatrol : EnemyAI
         StartCoroutine(MoveTurent(target));
 
     }
+
+    IEnumerator MoveTurent(float zRotate)
+    {
+        yield return null;
+    }
+
     IEnumerator MoveTurent(GameObject target)
     {
+        
         Quaternion from = TurrentRotatePoint.transform.localRotation;
         Quaternion to = TurrentRotatePoint.transform.localRotation;
 
-        Vector3 targetDirection = target.transform.position - TurrentRotatePoint.transform.position;
+        Vector3 targetDirection = target.transform.position - transform.position;
         Vector3 forward = TurrentRotatePoint.transform.up;//This comes from the blender file being Blender
 
-        float angle = Vector3.SignedAngle(forward, targetDirection, Vector3.forward);
+        float angle = Vector3.SignedAngle(forward, targetDirection, Vector3.up);
+        //float angle = Vector3.Angle(forward, targetDirection);
         Debug.Log("Total value to rotate is " + angle);
+        if(angle > -7.1f && angle < 7.1f)
+        { angle = 0f; }
 
         to *= Quaternion.Euler(Vector3.forward * angle);
         float timer = 0f;
@@ -219,6 +251,6 @@ public class SmallPatrol : EnemyAI
     {
         Gizmos.color = Color.red;
         Vector3 direction = CircleCastPoint.transform.TransformDirection(Vector3.forward * ShootingDistance);
-        Gizmos.DrawRay(CircleCastPoint.transform.position, direction);
+        //Gizmos.DrawRay(CircleCastPoint.transform.position, direction);
     }
 }
