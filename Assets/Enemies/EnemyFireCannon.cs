@@ -24,7 +24,7 @@ public class EnemyFireCannon : MonoBehaviour
         float distance = us.GetComponent<SmallPatrol>().ShootingDistance;
         RaycastHit hit;
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, distance, mask);
-        if (hit.transform != null && hit.transform.gameObject.CompareTag("Player"))
+        if (hit.transform != null && (hit.transform.gameObject.CompareTag("Player") || hit.transform.gameObject.CompareTag("PlayerShipPart")))
         {
             FireCannon();
         }

@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing.Text;
 using System.Linq;
-using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SmallPatrol : EnemyAI
@@ -210,13 +207,24 @@ public class SmallPatrol : EnemyAI
 
         var target = PossibleTargets.OrderByDescending(x => x.GetComponent<NeigbourCubes>().EnemyTargetValue).First();
         Debug.Log("Target location is " + target.name);
-        StartCoroutine(MoveTurent(target));
+        StartCoroutine(MoveTurent(zRotate));
 
     }
 
     IEnumerator MoveTurent(float zRotate)
     {
-        yield return null;
+        float timer = 0f;
+        float degrees = 5f;
+        while(timer < TimeToTurn)
+        {
+            TurrentRotatePoint.transform.Rotate(0, 0, degrees * Time.deltaTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        TurrentRotatePoint.transform.localRotation = Quaternion.Euler(0f, 0f, zRotate);
+
+        TurrentRotatePoint.GetComponent<EnemyFireCannon>().CheckFire();
     }
 
     IEnumerator MoveTurent(GameObject target)
