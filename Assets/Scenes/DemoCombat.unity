@@ -3039,7 +3039,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294589411}
-  m_LocalRotation: {x: 0.0019547192, y: -0.99087596, z: 0.13335866, w: 0.019401161}
+  m_LocalRotation: {x: 0.0019547227, y: -0.99087596, z: 0.13335866, w: 0.019401195}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4233,7 +4233,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399878128}
-  m_LocalRotation: {x: 0.0016024335, y: -0.9931323, z: 0.115360804, w: 0.019433444}
+  m_LocalRotation: {x: 0.001602435, y: -0.9931323, z: 0.115360804, w: 0.019433461}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7002,6 +7002,7 @@ GameObject:
   - component: {fileID: 797729770}
   - component: {fileID: 797729769}
   - component: {fileID: 797729768}
+  - component: {fileID: 797729772}
   m_Layer: 8
   m_Name: Hull
   m_TagString: Enemy
@@ -7104,6 +7105,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797729766}
   m_Mesh: {fileID: -6989282167128152099, guid: cb927bf28c84eb64ca23a2eec30a7160, type: 3}
+--- !u!114 &797729772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797729766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ad4a4cef57bdf4d883bf4b94c7149e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAI: {fileID: 457328373}
 --- !u!1 &817783999 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2982791384883981299, guid: f6219a1ba8c7c7d4395a5862c98090f3, type: 3}
@@ -8788,7 +8802,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.117014244, y: -0.00000003534672, z: 0.0000000041646797, w: 0.99313027}
+  m_LocalRotation: {x: 0.117014244, y: 0.00000003341036, z: -0.000000003936531, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 17, z: -116.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10650,7 +10664,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257890399}
-  m_LocalRotation: {x: 0.0023072956, y: -0.9882864, z: 0.15136014, w: 0.019362418}
+  m_LocalRotation: {x: 0.0023072937, y: -0.9882864, z: 0.15136012, w: 0.019362405}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14834,7 +14848,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1978665048}
-  - component: {fileID: 1978665049}
   m_Layer: 8
   m_Name: ObjBase
   m_TagString: Untagged
@@ -14858,19 +14871,6 @@ Transform:
   m_Father: {fileID: 762886375}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1978665049
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978665047}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2013911114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19990,6 +19990,7 @@ GameObject:
   - component: {fileID: 2270851587388367407}
   - component: {fileID: 1341145428}
   - component: {fileID: 7581953456238434934}
+  - component: {fileID: 7581953456238434935}
   m_Layer: 8
   m_Name: Hull
   m_TagString: Enemy
@@ -20028,6 +20029,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitObject: {fileID: 762886374}
   cube: {fileID: 0}
+--- !u!114 &7581953456238434935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552933894563987331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ad4a4cef57bdf4d883bf4b94c7149e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAI: {fileID: 762886378}
 --- !u!33 &7620020895361606130
 MeshFilter:
   m_ObjectHideFlags: 0

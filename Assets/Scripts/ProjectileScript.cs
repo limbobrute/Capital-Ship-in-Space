@@ -21,7 +21,8 @@ public class ProjectileScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("We hit something");
+        Debug.Log("We hit " + other.name);
+
         if(other.transform.gameObject.CompareTag(TargetType))
         {
             if(TargetType == "Player" || TargetType == "PlayerShipPart")
@@ -32,9 +33,7 @@ public class ProjectileScript : MonoBehaviour
 
             else if(TargetType == "Enemy")
             {
-                //tracker.RemoveFromInit(other.transform.gameObject);
-                //Destroy(other.transform.gameObject);
-                other.GetComponent<EnemyAI>().TakeDamage(damage);
+                other.GetComponent<DamageTaker>().Damage(damage);
                 Destroy(gameObject);
             }
         }
