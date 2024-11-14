@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour
     public GameObject Player;
     public GameObject GridCollider;
     public GameObject View;
+    public bool ReducedDamage = false;
+    public int HP = 0;
     public int TravelDistance = 0;
     public float speed = 6f;
     public float RotateStep = 6f;
@@ -37,6 +39,20 @@ public class EnemyAI : MonoBehaviour
 
     public virtual void FindTarget()
     { }
+
+    public void TakeDamage(int damage)
+    {
+        if (ReducedDamage)
+        { HP -= (damage / 2); }
+        else
+        { HP -= damage; }
+
+        if(HP <= 0)
+        {
+            GameObject init = GameObject.Find("Managers");
+            init.GetComponent<InitiativeTracker>().RemoveFromInit(this.gameObject);
+        }
+    }
 
     public IEnumerator MoveAlongRoute()
     {

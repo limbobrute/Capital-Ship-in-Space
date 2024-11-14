@@ -17,7 +17,7 @@ public class EndPlayerTurn : MonoBehaviour
     public void Fired()
     {
         GunsFired++;
-        if(GunsFired == 4)
+        if(GunsFired == 5)
         {
             GunsFired = 0;
             StartCoroutine(DelayNextTurn());

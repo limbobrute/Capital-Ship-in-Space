@@ -9,6 +9,7 @@ public class FireTurret : MonoBehaviour
     public GameObject[] FirePoint;
     public GameObject Projectile;
     public WeaponSwap NextWeapon;
+    public int damage = 0;
     public float speed = 100f;
     [HideInInspector]public bool hasFired = false;
 
@@ -21,6 +22,7 @@ public class FireTurret : MonoBehaviour
                 var shot = Instantiate(Projectile, point.transform.position, Quaternion.identity);
                 shot.GetComponent<ProjectileScript>().TargetType = "Enemy";
                 shot.GetComponent<Rigidbody>().AddForce(point.transform.TransformDirection(Vector3.forward) * speed);
+                shot.GetComponent<ProjectileScript>().SetDamage(damage);
             }
             hasFired = true;
         }

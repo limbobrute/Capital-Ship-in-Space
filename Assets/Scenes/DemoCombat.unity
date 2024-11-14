@@ -572,21 +572,25 @@ MonoBehaviour:
   - {fileID: 1058863781}
   - {fileID: 1951359387}
   - {fileID: 1016391507}
+  - {fileID: 818943645}
   - {fileID: 1877464820}
   Rotater:
   - {fileID: 1566294579}
   - {fileID: 1662306044}
   - {fileID: 2013911114}
+  - {fileID: 2035967231}
   - {fileID: 2134498314}
   Adjuster:
   - {fileID: 1566294581}
   - {fileID: 1662306046}
   - {fileID: 2013911115}
+  - {fileID: 2035967233}
   - {fileID: 2134498316}
   Shoot:
   - {fileID: 1566294582}
   - {fileID: 1662306049}
   - {fileID: 2013911118}
+  - {fileID: 2035967236}
   - {fileID: 2134498319}
 --- !u!114 &23454242
 MonoBehaviour:
@@ -4621,7 +4625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &457328370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4667,6 +4671,8 @@ MonoBehaviour:
   Player: {fileID: 23454232}
   GridCollider: {fileID: 305064490}
   View: {fileID: 1882889151}
+  ReducedDamage: 0
+  HP: 50
   TravelDistance: 5
   speed: 30
   RotateStep: 1
@@ -4685,7 +4691,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   ShootingDistance: 80
-  CannonDamage: 10
+  CannonDamage: 50
 --- !u!1 &484634585
 GameObject:
   m_ObjectHideFlags: 0
@@ -6762,6 +6768,8 @@ MonoBehaviour:
   Player: {fileID: 23454232}
   GridCollider: {fileID: 1756584544}
   View: {fileID: 1097087916}
+  ReducedDamage: 0
+  HP: 50
   TravelDistance: 5
   speed: 30
   RotateStep: 1
@@ -6780,7 +6788,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   ShootingDistance: 80
-  CannonDamage: 10
+  CannonDamage: 50
 --- !u!1 &771968296
 GameObject:
   m_ObjectHideFlags: 0
@@ -11929,6 +11937,7 @@ MonoBehaviour:
   - {fileID: 1516184807}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
   NextWeapon: {fileID: 23454240}
+  damage: 15
   speed: 1000
   hasFired: 0
 --- !u!114 &1566294586
@@ -12383,6 +12392,7 @@ MonoBehaviour:
   - {fileID: 1684534885}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
   NextWeapon: {fileID: 23454240}
+  damage: 15
   speed: 1000
   hasFired: 0
 --- !u!114 &1662306053
@@ -14927,6 +14937,7 @@ MonoBehaviour:
   - {fileID: 771968296}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
   NextWeapon: {fileID: 23454240}
+  damage: 5
   speed: 1000
   hasFired: 0
 --- !u!114 &2013911122
@@ -15010,6 +15021,7 @@ MonoBehaviour:
   - {fileID: 414295801}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
   NextWeapon: {fileID: 23454240}
+  damage: 5
   speed: 1000
   hasFired: 0
 --- !u!114 &2035967240
@@ -15522,6 +15534,7 @@ MonoBehaviour:
   - {fileID: 226570632}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
   NextWeapon: {fileID: 23454240}
+  damage: 15
   speed: 1000
   hasFired: 0
 --- !u!114 &2134498323
@@ -15671,7 +15684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &433935763592972041
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17335,7 +17348,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!23 &3469935925440187134
 MeshRenderer:
@@ -18558,6 +18571,8 @@ MonoBehaviour:
   Player: {fileID: 23454232}
   GridCollider: {fileID: 5301042873720684155}
   View: {fileID: 5301042873445954223}
+  ReducedDamage: 0
+  HP: 0
   TravelDistance: 4
   speed: 30
   RotateStep: 1
@@ -19897,7 +19912,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!4 &7397492800313655737
 Transform:
@@ -19944,7 +19959,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!4 &7538965415193462505
 Transform:
@@ -20414,7 +20429,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!33 &8089434285582893836
 MeshFilter:
@@ -20451,7 +20466,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!4 &8109405248497774812
 Transform:
@@ -20497,7 +20512,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!23 &8235015662600198485
 MeshRenderer:
@@ -20784,7 +20799,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &8795003210001441043
 GameObject:
@@ -20925,7 +20940,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &9160308424539889867
 GameObject:
@@ -21062,7 +21077,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!33 &9212608699924049501
 MeshFilter:

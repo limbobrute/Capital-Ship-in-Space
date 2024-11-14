@@ -32,8 +32,9 @@ public class ProjectileScript : MonoBehaviour
 
             else if(TargetType == "Enemy")
             {
-                tracker.RemoveFromInit(other.transform.gameObject);
-                Destroy(other.transform.gameObject);
+                //tracker.RemoveFromInit(other.transform.gameObject);
+                //Destroy(other.transform.gameObject);
+                other.GetComponent<EnemyAI>().TakeDamage(damage);
                 Destroy(gameObject);
             }
         }
