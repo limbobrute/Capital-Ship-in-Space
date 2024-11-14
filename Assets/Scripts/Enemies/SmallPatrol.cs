@@ -11,6 +11,7 @@ public class SmallPatrol : EnemyAI
     public LayerMask mask;
     public int ShootingDistance = 30;
     public int CannonDamage = 10;
+    [Tooltip("How fast the cannon rotates")]public float DegreesPerSecond = 45f;
 
     public override void MoveSelf()
     {
@@ -214,10 +215,9 @@ public class SmallPatrol : EnemyAI
     IEnumerator MoveTurent(float zRotate)
     {
         float timer = 0f;
-        float degrees = 5f;
         while(timer < TimeToTurn)
         {
-            TurrentRotatePoint.transform.Rotate(0, 0, degrees * Time.deltaTime);
+            TurrentRotatePoint.transform.Rotate(0, 0, DegreesPerSecond * Time.deltaTime);
             timer += Time.deltaTime;
             yield return null;
         }

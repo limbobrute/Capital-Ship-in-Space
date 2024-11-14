@@ -3039,7 +3039,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294589411}
-  m_LocalRotation: {x: 0.0019547227, y: -0.99087596, z: 0.13335866, w: 0.019401195}
+  m_LocalRotation: {x: 0.0019547192, y: -0.99087596, z: 0.13335866, w: 0.019401161}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4625,7 +4625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &457328370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4692,6 +4692,7 @@ MonoBehaviour:
     m_Bits: 128
   ShootingDistance: 80
   CannonDamage: 50
+  DegreesPerSecond: 45
 --- !u!1 &484634585
 GameObject:
   m_ObjectHideFlags: 0
@@ -6789,6 +6790,7 @@ MonoBehaviour:
     m_Bits: 128
   ShootingDistance: 80
   CannonDamage: 50
+  DegreesPerSecond: 45
 --- !u!1 &771968296
 GameObject:
   m_ObjectHideFlags: 0
@@ -8802,7 +8804,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.117014244, y: 0.00000003341036, z: -0.000000003936531, w: 0.99313027}
+  m_LocalRotation: {x: 0.117014244, y: -0.00000003534672, z: 0.0000000041646797, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 17, z: -116.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11227,9 +11229,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missile: {fileID: 1948338985420275445, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-  weaponEnabled: {fileID: 23454240}
   startCube: {fileID: 1389017246}
   endCube: {fileID: 0}
+  canFire: 0
+  damage: 30
   Fire: 109
 --- !u!54 &1389017244
 Rigidbody:
@@ -12288,6 +12291,7 @@ MonoBehaviour:
   SpaceShip: {fileID: 23454232}
   GridCollider: {fileID: 233348043}
   ghostObject: {fileID: 1643408632}
+  missileLauncher: {fileID: 1389017243}
   EngineEffects:
   - {fileID: 617027199}
   - {fileID: 817783999}
@@ -18572,7 +18576,7 @@ MonoBehaviour:
   GridCollider: {fileID: 5301042873720684155}
   View: {fileID: 5301042873445954223}
   ReducedDamage: 0
-  HP: 0
+  HP: 45
   TravelDistance: 4
   speed: 30
   RotateStep: 1
@@ -18587,6 +18591,7 @@ MonoBehaviour:
   MissileLaunchSite: {fileID: 5301042874297311833}
   Missile: {fileID: 1948338985420275445, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
   MissileTargetingDistance: 10
+  MissileDamage: 100
 --- !u!1 &5301042874223172244
 GameObject:
   m_ObjectHideFlags: 0
@@ -18604,7 +18609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &5301042874297311829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18655,7 +18660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5301042874297311833}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 3.92, z: 1.92}
+  m_LocalPosition: {x: 0, y: 3.92, z: 6.56}
   m_LocalScale: {x: 6.6666665, y: 6.666668, z: 6.666668}
   m_ConstrainProportionsScale: 0
   m_Children: []

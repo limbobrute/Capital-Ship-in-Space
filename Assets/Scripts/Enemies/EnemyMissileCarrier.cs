@@ -5,43 +5,17 @@ using UnityEngine;
 
 public class EnemyMissileCarrier : EnemyAI
 {
-    /*public GameObject Player;
-    public GameObject GridCollider;*/
     public GameObject MissileLaunchSite;
     public GameObject Missile;
-    //public GameObject View;
-    //public int TravelDistance = 0;
     public int MissileTargetingDistance = 30;
-    //public float speed = 6f;
-    //public float RotateStep = 6f;
-    //public float TimeToTurn = 3f;
-    //private GameObject EndPoint;
-    //private Pathfinding path;
+    public int MissileDamage = 0;
     private List<GameObject> MissileRoute = new List<GameObject>();
     private MissilePathfinding Missilepath;
-    //private ShowNearbyGrid StartPoint;
-    //private List<GameObject> PossibleEndPoint = new List<GameObject>();
-    //private List<GameObject> Route = new List<GameObject>();
-    //private List<GameObject> PossibleTargets = new List<GameObject>();
-    //private CubeGrid grid;
-    private InitiativeTracker tracker;
     
     private void Awake()
     {
-        //path = new Pathfinding();
-        //StartPoint = GetComponentInChildren<ShowNearbyGrid>();
         Missilepath = new MissilePathfinding();
-        //grid = CubeGrid.instance;
-        tracker = InitiativeTracker.instance;
     }
-
-    /*private void Update()
-    {
-        if (Route.Count > 0)
-        {
-            MoveAlongRoute();
-        }
-    }*/
 
     public override void MoveSelf()
     {
@@ -73,25 +47,9 @@ public class EnemyMissileCarrier : EnemyAI
         StartCoroutine(MoveAlongRoute());
     }
 
-    /*private void MoveAlongRoute()
-    {
-        var targetRotation = Quaternion.LookRotation(Route[0].transform.position - transform.position);
-        var step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, Route[0].transform.position, step);
-        transform.position = Vector3.MoveTowards(transform.position, Route[0].transform.position, step);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, step);
-        if (Vector3.Distance(transform.position, Route[0].transform.position) < .05f)
-        { transform.position = Route[0].transform.position; Route.RemoveAt(0); }
-
-        if (Route.Count == 0)
-        {
-            FindTarget();
-        }
-    }*/
-
     public override void FindTarget()
     {
-        //var prefab = Instantiate(Missile, MissileLaunchSite.transform.position, Quaternion.Euler(Vector3.up));
+        Debug.Log("Now searching for the player");
         foreach (GameObject obj in grid.Grid)
         {
             var partcheck = obj.GetComponent<NeigbourCubes>();
@@ -103,13 +61,17 @@ public class EnemyMissileCarrier : EnemyAI
         MissileRoute = Missilepath.FindPath(GridCollider.GetComponent<ShowNearbyGrid>().GridPoint, EndPoint);
         if ((MissileRoute.Count + 1) > MissileTargetingDistance)
         {
+            Debug.Log("Too far, please hold");
             View.SetActive(false);
             tracker.NextTurn(this.gameObject);
         }
         else
         {
+            Debug.Log("Launching missile");
             var prefab = Instantiate(Missile, MissileLaunchSite.transform.position, Quaternion.Euler(Vector3.forward));
+            prefab.name = "EnemyMissile";
             var MB = prefab.GetComponent<MissileBehavior>();
+            MB.damage = MissileDamage;
             MB.TargetTag = "Player";
             MB.CameraEnable(this.gameObject);
             MB.Route = MissileRoute;

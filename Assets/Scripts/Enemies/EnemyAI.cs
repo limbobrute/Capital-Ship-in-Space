@@ -49,8 +49,7 @@ public class EnemyAI : MonoBehaviour
 
         if (HP <= 0)
         {
-            GameObject init = GameObject.Find("Managers");
-            init.GetComponent<InitiativeTracker>().RemoveFromInit(this.gameObject);
+            tracker.RemoveFromInit(this.gameObject);
             Destroy(this.gameObject);
         }
     }

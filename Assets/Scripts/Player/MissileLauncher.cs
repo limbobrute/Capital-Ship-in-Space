@@ -5,9 +5,10 @@ using UnityEngine;
 public class MissileLauncher : MonoBehaviour
 {
     public GameObject missile;
-    public WeaponSwap weaponEnabled;
     public GrabCube startCube;
     public GameObject endCube;
+    public bool canFire = false;
+    public int damage = 0;
     public KeyCode Fire = KeyCode.M;
     private CubeGrid grid;
     private List<GameObject> Route = new List<GameObject>();
@@ -21,8 +22,9 @@ public class MissileLauncher : MonoBehaviour
 
     private void Update()
     {
-        if(weaponEnabled.isActiveAndEnabled && Input.GetKeyDown(Fire))
+        if(canFire && Input.GetKeyDown(Fire))
         {
+            canFire = false;
             var prefab = Instantiate(missile, transform.position, Quaternion.Euler(Vector3.forward));
             foreach(GameObject obj in grid.Grid)
             {

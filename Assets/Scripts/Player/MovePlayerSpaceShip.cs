@@ -7,6 +7,7 @@ public class MovePlayerSpaceShip : MonoBehaviour
     public GameObject SpaceShip;
     public GameObject GridCollider;
     public PlayerCameraMove ghostObject;
+    public MissileLauncher missileLauncher;
     public GameObject[] EngineEffects = new GameObject[3];
     public Transform GhostCam;
     public GameObject MoveCam;
@@ -70,6 +71,7 @@ public class MovePlayerSpaceShip : MonoBehaviour
         }
         SpaceShip.transform.rotation = transform.rotation;
         SpaceShip.transform.position = transform.position;
+        missileLauncher.canFire = true;
         foreach (var obj in EngineEffects)
         { obj.SetActive(false); }
         ghostObject.HideSelf();
