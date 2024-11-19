@@ -8,6 +8,7 @@ public class MissileBehavior : MonoBehaviour
     public string TargetTag;
     public float speed = 20f;
     public int damage = 0;
+    public int HP = 0;
     public GameObject Cam;
     private GameObject Carrier;
     private float time = 0f;
@@ -35,26 +36,17 @@ public class MissileBehavior : MonoBehaviour
         Carrier = obj;
     }
 
-    /*private void MoveAlongRoute()
+    public void Damage(int damage)
     {
-        var step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, Route[0].transform.position, step);
+        HP -= damage;
 
-        if (Vector3.Distance(transform.position, Route[0].transform.position) < .05f)
-        { 
-          transform.position = Route[0].transform.position;
-          Route.RemoveAt(0);
-          time = 0f;
-        }
-        if (Route.Count == 0)
+        if(HP <=0)
         {
-            if (Cam.activeSelf == true)
-            {
-                tracker.NextTurn(Carrier);
-            }
-            Destroy(gameObject);
+            if(Cam.activeSelf == true)
+            { tracker.NextTurn(Carrier); }
+            Destroy(this.gameObject);
         }
-    }*/
+    }
 
     IEnumerator MoveAlongRoute()
     {

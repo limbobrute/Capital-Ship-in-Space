@@ -26,16 +26,14 @@ public class ProjectileScript : MonoBehaviour
         if(other.transform.gameObject.CompareTag(TargetType))
         {
             if(TargetType == "Player" || TargetType == "PlayerShipPart")
-            {
-                other.transform.gameObject.GetComponent<ComponentHealth>().DamageComponent(damage);
-                Destroy(gameObject);
-            }
+            { other.transform.gameObject.GetComponent<ComponentHealth>().DamageComponent(damage); }
 
             else if(TargetType == "Enemy")
-            {
-                other.GetComponent<DamageTaker>().Damage(damage);
-                Destroy(gameObject);
-            }
+            { other.GetComponent<DamageTaker>().Damage(damage); }
+
+            else if(TargetType == "Missile")
+            { other.GetComponent<MissileBehavior>().Damage(damage); }
+            Destroy(gameObject);
         }
         else
         { Destroy(gameObject); }
@@ -43,7 +41,7 @@ public class ProjectileScript : MonoBehaviour
 
     IEnumerator DistanceCheck()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
         Destroy(gameObject);
     }
 }
