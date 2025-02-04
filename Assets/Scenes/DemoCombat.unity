@@ -454,7 +454,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46963514}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -466,13 +466,13 @@ MonoBehaviour:
   - {fileID: 1064673850}
   - {fileID: 1633082215}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58990016}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -501,13 +501,13 @@ MonoBehaviour:
   - {fileID: 1565848457}
   - {fileID: 1247119521}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75818446}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -671,13 +671,13 @@ MonoBehaviour:
   - {fileID: 1148593179}
   - {fileID: 426901978}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79462522}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -706,13 +706,13 @@ MonoBehaviour:
   - {fileID: 705976881}
   - {fileID: 1950369301}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -863,7 +863,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126375957}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -875,13 +875,13 @@ MonoBehaviour:
   - {fileID: 226128127}
   - {fileID: 1268712379}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -2134,7 +2134,7 @@ RectTransform:
   m_Children:
   - {fileID: 701292113}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2215,7 +2215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232757283}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -2227,13 +2227,13 @@ MonoBehaviour:
   - {fileID: 1440565208}
   - {fileID: 1742861685}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -2400,7 +2400,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247892796}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -2412,13 +2412,13 @@ MonoBehaviour:
   - {fileID: 524476824}
   - {fileID: 412657977}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -2592,7 +2592,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &270795432
 GameObject:
@@ -2722,7 +2722,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &273411816 stripped
 GameObject:
@@ -3244,7 +3244,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310963125}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -3256,13 +3256,13 @@ MonoBehaviour:
   - {fileID: 1124943066}
   - {fileID: 1837310735}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -3530,7 +3530,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335799618}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -3542,13 +3542,13 @@ MonoBehaviour:
   - {fileID: 1982164864}
   - {fileID: 1134856902}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -3941,7 +3941,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &388105606
 MonoBehaviour:
@@ -4569,7 +4569,7 @@ Transform:
   - {fileID: 45309227}
   - {fileID: 1710245857}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &457328373
 MonoBehaviour:
@@ -4775,7 +4775,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504297092}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -4787,13 +4787,13 @@ MonoBehaviour:
   - {fileID: 1387322907}
   - {fileID: 2066906675}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -5082,67 +5082,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1856817419900862268, guid: 8efa0f3bf26c27148b6239db3e0646c4, type: 3}
   m_PrefabInstance: {fileID: 3789280799125294355}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &574964482
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2066447550, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171555274221511759, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171555274221511759, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.7554064
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171555274221511759, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 16.145706
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171555274221511759, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -110.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171555274221511759, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171555274221511759, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171555274221511759, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171555274221511759, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171555274221511759, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171555274221511759, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171555274221511759, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1948338985420275445, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
-      propertyPath: m_Name
-      value: Missile01blend Variant
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 359e8bded6c81734782025b3c36ba77e, type: 3}
 --- !u!1 &581905316
 GameObject:
   m_ObjectHideFlags: 0
@@ -5686,7 +5625,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678591271}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -5698,13 +5637,13 @@ MonoBehaviour:
   - {fileID: 602712558}
   - {fileID: 1507770855}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -5908,7 +5847,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &705976881
 GameObject:
@@ -6291,7 +6230,7 @@ Transform:
   - {fileID: 294589413}
   - {fileID: 399878130}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &726763378
 MonoBehaviour:
@@ -6340,7 +6279,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727966771}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -6352,13 +6291,13 @@ MonoBehaviour:
   - {fileID: 129311423}
   - {fileID: 95541770}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -6463,7 +6402,7 @@ RectTransform:
   - {fileID: 1800099782}
   - {fileID: 207615448}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6600,7 +6539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &762886375
 Transform:
   m_ObjectHideFlags: 0
@@ -6616,7 +6555,7 @@ Transform:
   - {fileID: 543450653573144503}
   - {fileID: 1978665048}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &762886377
 MonoBehaviour:
@@ -6775,7 +6714,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &794244891 stripped
 Transform:
@@ -7194,7 +7133,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831427920}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -7206,13 +7145,13 @@ MonoBehaviour:
   - {fileID: 1051571622}
   - {fileID: 752596597}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -7408,7 +7347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878234578}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -7420,13 +7359,13 @@ MonoBehaviour:
   - {fileID: 980531638}
   - {fileID: 1453396634}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -8011,7 +7950,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963132488}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -8023,13 +7962,13 @@ MonoBehaviour:
   - {fileID: 1726752308}
   - {fileID: 1782019037}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -8406,7 +8345,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001268105}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -8418,13 +8357,13 @@ MonoBehaviour:
   - {fileID: 1487577008}
   - {fileID: 94420730}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -8451,7 +8390,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023532116}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -8463,13 +8402,13 @@ MonoBehaviour:
   - {fileID: 1427580277}
   - {fileID: 1267303865}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -8670,7 +8609,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031952178}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -8682,13 +8621,13 @@ MonoBehaviour:
   - {fileID: 1840976379}
   - {fileID: 1425304592}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -8848,7 +8787,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052979253}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -8860,13 +8799,13 @@ MonoBehaviour:
   - {fileID: 1360241356}
   - {fileID: 335144227}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -8925,7 +8864,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1060815115
 MonoBehaviour:
@@ -9106,7 +9045,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088151539}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -9118,13 +9057,13 @@ MonoBehaviour:
   - {fileID: 1617409544}
   - {fileID: 741237891}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -9610,7 +9549,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204780785
 GameObject:
@@ -9709,7 +9648,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1204780790
 Rigidbody:
@@ -10336,7 +10275,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1297857960 stripped
 Transform:
@@ -10895,7 +10834,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433213645}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -10907,13 +10846,13 @@ MonoBehaviour:
   - {fileID: 2060224916}
   - {fileID: 1158735209}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -11080,13 +11019,13 @@ MonoBehaviour:
   - {fileID: 689980697}
   - {fileID: 2062798692}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -11612,7 +11551,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633182587}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -11624,13 +11563,13 @@ MonoBehaviour:
   - {fileID: 238126829}
   - {fileID: 749753930}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -11668,7 +11607,7 @@ Transform:
   - {fileID: 150072423}
   - {fileID: 233348044}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1643408632
 MonoBehaviour:
@@ -11783,7 +11722,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653764459}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -11795,13 +11734,13 @@ MonoBehaviour:
   - {fileID: 1577293165}
   - {fileID: 177717794}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -13038,7 +12977,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870383227}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -13050,13 +12989,13 @@ MonoBehaviour:
   - {fileID: 2068392177}
   - {fileID: 241861595}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -13724,7 +13663,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957080683}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -13736,13 +13675,13 @@ MonoBehaviour:
   - {fileID: 1954132452}
   - {fileID: 2092214673}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -13868,7 +13807,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982349297}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -13880,13 +13819,13 @@ MonoBehaviour:
   - {fileID: 659499172}
   - {fileID: 797528812}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -13908,7 +13847,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006136074}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee28d2356cffb14f8a1de71815bd7d6, type: 3}
   m_Name: 
@@ -13920,13 +13859,13 @@ MonoBehaviour:
   - {fileID: 95569046}
   - {fileID: 851044222}
   Projectile: {fileID: 8960302201114593726, guid: 69d286887a7336a4885962d8eac1d115, type: 3}
-  damage: 0
+  damage: 1
   ProjectileSpeed: 500
   RotateSpeed: 10
   radius: 500
   depth: 100
   angle: 15
-  MaxDelay: 0.5
+  Delay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -15062,7 +15001,7 @@ PrefabInstance:
       objectReference: {fileID: 1285548326}
     - target: {fileID: 3789280799148715786, guid: 8efa0f3bf26c27148b6239db3e0646c4, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3789280799148715786, guid: 8efa0f3bf26c27148b6239db3e0646c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15162,19 +15101,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8777600589066262607, guid: 8efa0f3bf26c27148b6239db3e0646c4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9999988
       objectReference: {fileID: 0}
     - target: {fileID: 8777600589066262607, guid: 8efa0f3bf26c27148b6239db3e0646c4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8777600589066262607, guid: 8efa0f3bf26c27148b6239db3e0646c4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.0015438196
       objectReference: {fileID: 0}
     - target: {fileID: 8777600589066262607, guid: 8efa0f3bf26c27148b6239db3e0646c4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8777600589066262607, guid: 8efa0f3bf26c27148b6239db3e0646c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15182,7 +15121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8777600589066262607, guid: 8efa0f3bf26c27148b6239db3e0646c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 0.177
       objectReference: {fileID: 0}
     - target: {fileID: 8777600589066262607, guid: 8efa0f3bf26c27148b6239db3e0646c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -15496,7 +15435,7 @@ Transform:
   m_Children:
   - {fileID: 214476628613009380}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5301042874223172242
 MonoBehaviour:

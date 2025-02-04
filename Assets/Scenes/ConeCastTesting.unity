@@ -245,14 +245,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697874852}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14d6f2d2bb5e31844933f092729bdd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
-  depth: 2
-  angle: 5
+  radius: 10
+  depth: 5
+  angle: 15
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -347,14 +347,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BallJoint: {fileID: 697874852}
-  FirePoints: []
-  RotateSpeed: 10
+  FirePoints:
+  - {fileID: 697874852}
+  Projectile: {fileID: 0}
+  damage: 0
+  ProjectileSpeed: 100
+  RotateSpeed: 50
   radius: 10
-  depth: 30
-  angle: 60
+  depth: 5
+  angle: 15
+  MaxDelay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 512
+  isFiring: 0
+  Target: {fileID: 0}
 --- !u!1 &856955623
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,7 +2572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4040842543822111199, guid: 237a620247d58174a89a94157660bf71, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4040842543822111199, guid: 237a620247d58174a89a94157660bf71, type: 3}
       propertyPath: m_TagString

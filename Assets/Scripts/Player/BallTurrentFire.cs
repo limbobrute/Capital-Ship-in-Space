@@ -11,19 +11,19 @@ public class BallTurrentFire : MonoBehaviour
     public GameObject[] FirePoints;
     public GameObject Projectile;
     public int damage = 0;
-    int FirePointPosition = 0;
     public float ProjectileSpeed = 100f;
     public float RotateSpeed = 0f;
     public float radius = 0f;
     public float depth = 0f;
     public float angle = 0f;
-    public float MaxDelay = .5f;
-    float timer = 0f;
+    public float Delay = .5f;
     public LayerMask mask;
 
     public bool isFiring = false;
     private GameObject Target;
     private Physics physics;
+    int FirePointPosition = 0;
+    float timer = 0f;
 
     private void FixedUpdate()
     {
@@ -31,37 +31,27 @@ public class BallTurrentFire : MonoBehaviour
 
         if(coneHits.Length > 0 && coneHits[0].collider.gameObject.CompareTag("Missile") && !isFiring)
         {
-            float delay = Random.Range(0, MaxDelay);
             Debug.Log("Found a missile!!");
-            //Fire(coneHits[0].collider.gameObject);
             Target = coneHits[0].collider.gameObject;
             isFiring = true;
-            StartCoroutine(Fire(delay));
         }
 
         if(coneHits.Length == 0)
         {
-            Debug.Log("No missiles to be found. Stop firing.");
-            StopCoroutine(Fire(0f));
+            //Debug.Log("No missiles to be found. Stop firing.");
             Target = null;
             isFiring = false;
         }
 
-        coneHits = null;
-
-    }
-
-    IEnumerator Fire(float startdelay)
-    {
-        //float delay = 0f;
-        while (isFiring)
+        if (Target != null)
         {
-            timer += Time.deltaTime;
             Quaternion rotation = Quaternion.LookRotation(Target.transform.position - BallJoint.transform.position);
             BallJoint.transform.rotation = Quaternion.RotateTowards(BallJoint.transform.rotation, rotation, Time.deltaTime * RotateSpeed);
 
+            timer += Time.deltaTime;
+
             Debug.Log("Wait for cool down.");
-            if (timer >= startdelay)
+            if (timer >= Delay)
             {
                 Debug.Log("FIRE!!");
                 timer = 0f;
@@ -75,11 +65,10 @@ public class BallTurrentFire : MonoBehaviour
                 FirePointPosition++;
                 if (FirePointPosition == FirePoints.Length)
                 { FirePointPosition = 0; }
-                startdelay = Random.Range(0, MaxDelay);
             }
 
-            yield return null;
         }
+
     }
 
     private void OnDrawGizmos()
