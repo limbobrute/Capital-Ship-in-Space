@@ -11,7 +11,6 @@ public class MissileBehavior : MonoBehaviour
     public int HP = 0;
     public GameObject Cam;
     private GameObject Carrier;
-    private float time = 0f;
     private InitiativeTracker tracker;
 
     private void Start()
@@ -65,10 +64,12 @@ public class MissileBehavior : MonoBehaviour
         transform.position = Route[0].transform.position;
         Route.RemoveAt(0);
         if (Route.Count > 0)
-        { StartCoroutine(MoveAlongRoute()); }
+        { Debug.Log("Moving to next point"); StartCoroutine(MoveAlongRoute()); }
         else
         {
             Debug.Log("We have failed to hit the target. Try again");
+            Debug.Log("Points left to go: " + Route.Count);
+            Debug.Log("Position of failure: (" + transform.position.x + ", " + transform.position.y + ", " + transform.position.z+")");
             if(Cam.activeSelf == true)
             { tracker.NextTurn(Carrier); }
             Destroy(this.gameObject);

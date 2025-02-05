@@ -231,8 +231,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Route: []
   TargetTag: 
-  speed: 30
+  speed: 1000
   damage: 0
+  HP: 0
   Cam: {fileID: 498972900835819197}
 --- !u!1001 &5802883979438747023
 PrefabInstance:

@@ -73,9 +73,7 @@ public class EnemyAI : MonoBehaviour
         if (Route.Count > 0)
         { StartCoroutine(MoveAlongRoute()); }
         else
-        {
-            FindTarget(); 
-        }
+        { FindTarget(); }
     }
 
     void rotateTowards(Vector3 to)
